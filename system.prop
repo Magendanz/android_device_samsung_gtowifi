@@ -1,0 +1,6 @@
+ro.hardware=qcom
+ro.chipname=SDM429
+ro.arch=msm8937
+ro.boot.bootdevice=7824900.sdhci
+ro.boot.usbcontroller=msm_hsusb
+ro.sf.lcd_density=213
