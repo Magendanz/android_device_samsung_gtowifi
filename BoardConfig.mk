@@ -34,6 +34,9 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := msm8937
@@ -41,22 +44,22 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno504
 TARGET_BOOTLOADER_BOARD_NAME := gtowifi
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78B0000 firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78B0000 androidboot.usbconfigfs=true loop.max_part=7
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_SECOND_OFFSET := 0x00f00000
 BOARD_KERNEL_TAGS_OFFSET := 0x01e00000
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMG_HEADER_VERSION := 1
-TARGET_PREBUILT_KERNEL := $(DEVICE_FOLDER)/prebuilt/kernel
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_FOLDER)/prebuilt/recovery_dtbo
-BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_FOLDER)/mkbootimg.mk
+TARGET_PREBUILT_KERNEL := $(DEVICE_FOLDER)/prebuilt/kernel
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_FOLDER)/prebuilt/recovery_dtbo
+BOARD_INCLUDE_RECOVERY_DTBO := true
+BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
@@ -78,6 +81,12 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
 BOARD_BUILD_DISABLED_VBMETAIMAGE := true
+
+# Crypto
+#TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+#TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_FBE := true
 
 # Debug
 TARGET_USES_LOGD := true
@@ -108,4 +117,4 @@ TW_USE_NEW_MINADBD := true
 TW_USE_TOOLBOX := true
 TW_NO_LEGACY_PROPS := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-TW_DEVICE_VERSION := 0
+TW_DEVICE_VERSION := 1
