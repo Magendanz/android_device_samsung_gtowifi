@@ -6,7 +6,7 @@ To build:
 
 ```sh
 . build/envsetup.sh
-lunch omni_gtowifi-eng
+lunch aosp_gtowifi-eng
 make recoveryimage
 ```
 
