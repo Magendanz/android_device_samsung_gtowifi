@@ -16,5 +16,5 @@ repo sync
 Then to build:
 
 ```sh
-export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch aosp_gtowifi-eng; mka recoveryimage
+export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_gtowifi-eng; mka recoveryimage
 

@@ -8,8 +8,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
+PRODUCT_NAME := twrp_gtowifi
 PRODUCT_DEVICE := gtowifi
-PRODUCT_NAME := aosp_gtowifi
 PRODUCT_MODEL := SM-T290
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung

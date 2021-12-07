@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_gtowifi.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_gtowifi.mk
 
-COMMON_LUNCH_CHOICES := aosp_gtowifi-eng
+COMMON_LUNCH_CHOICES := twrp_gtowifi-eng
