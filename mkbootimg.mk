@@ -24,7 +24,6 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(AVBTOOL) $(INTERNAL_BOOTIMAGE_FILE
 	  --partition_size $(BOARD_BOOTIMAGE_PARTITION_SIZE) \
 	  --partition_name boot $(INTERNAL_AVB_BOOT_SIGNING_ARGS) \
 	  $(BOARD_AVB_BOOT_ADD_HASH_FOOTER_ARGS)
-	$(hide) lz4 -B6 --content-size $@
 	@echo "Made boot image: $@"
 
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(AVBTOOL) $(recovery_ramdisk) $(recovery_kernel) $(BOARD_PREBUILT_DTBOIMAGE)
@@ -37,7 +36,6 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(AVBTOOL) $(recovery_ramdisk) $
 	  --partition_size $(BOARD_RECOVERYIMAGE_PARTITION_SIZE) \
 	  --partition_name recovery $(INTERNAL_AVB_RECOVERY_SIGNING_ARGS) \
 	  $(BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS)
-	$(hide) lz4 -B6 --content-size $@
 	@echo "Made recovery image: $@"
 
 

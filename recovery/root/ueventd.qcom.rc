@@ -65,6 +65,13 @@ firmware_directories /vendor/firmware_mnt/image/  /vendor/firmware-modem/image/
 #permissions for UFS RPMB BSG device node
 /dev/0:0:0:49476          0600   system     system
 
+#permissions for USB
+/dev/usb_mtp_gadget       0660   system     mtp
+/dev/android_ssusbcon     0660   system     system
+
+/sys/class/android_usb/android0  f_rndis/ethaddr      0660  system   system
+/sys/class/android_usb/android0  terminal_version     0660  system   system
+
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
 

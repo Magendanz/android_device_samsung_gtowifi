@@ -1,6 +1,16 @@
+o.display.series=Samsung Galaxy Tab A 8.0
+ro.product.board=QC_Reference_Phone
+ro.board.platform=msm8937
 ro.hardware=qcom
 ro.chipname=SDM429
 ro.arch=msm8937
+ro.product.system.brand=samsung
+ro.product.system.device=gtowifi
+ro.product.system.manufacturer=samsung
+ro.product.system.model=SM-T290
+ro.product.system.name=gtowifixx
 ro.boot.bootdevice=7824900.sdhci
+ro.treble.enabled=true
+ro.adb.secure=0
 ro.boot.usbcontroller=msm_hsusb
 ro.sf.lcd_density=213
